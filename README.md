@@ -6,7 +6,7 @@ Example module showing how to implement Symfony console command
 
 ### Supported PrestaShop versions
 
-Compatible with and 1.7.6.0 and above (keep in mind that return types are supported from PHP 7 only)
+Tested on 1.7.7, but same principles applies to all versions above 1.7.6.0
 
 ### Requirements
 

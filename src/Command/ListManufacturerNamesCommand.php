@@ -25,11 +25,44 @@
  */
 declare(strict_types=1);
 
-namespace PrestaShop\Module\DemoOverrideObjectModel\Command;
+namespace PrestaShop\Module\DemoConsoleCommand\Command;
 
+use PrestaShop\PrestaShop\Core\CommandBus\CommandBusInterface;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
 
 class ListManufacturerNamesCommand extends Command
 {
-    // @todo;
+    /**
+     * @var CommandBusInterface
+     */
+    private $queryBus;
+
+    /**
+     * @param CommandBusInterface $queryBus
+     */
+    public function __construct(CommandBusInterface $queryBus)
+    {
+        parent::__construct();
+        $this->queryBus = $queryBus;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configure()
+    {
+        $this
+            ->setName('demo:list-manufacturers')
+            ->setDescription(
+                'Lists existing manufacturer names'
+            )
+        ;
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output)
+    {
+        $output->writeln('Hello world');
+    }
 }
