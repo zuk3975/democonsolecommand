@@ -1,7 +1,4 @@
 services:
-
-    PrestaShop\Module\DemoConsoleCommand\Command\ListManufacturerNamesCommand:
-        class: PrestaShop\Module\DemoConsoleCommand\Command\ListManufacturerNamesCommand
-        arguments:
-            - '@prestashop.core.query_bus'
+    PrestaShop\Module\DemoConsoleCommand\Command\ListManufacturersCommand:
+        class: PrestaShop\Module\DemoConsoleCommand\Command\ListManufacturersCommand
         tags: [ console.command ]
